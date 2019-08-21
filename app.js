@@ -19,4 +19,19 @@ function sort(list) {
   return list;
 }
 
-module.exports = {divide, sort};
+function sum(arr) {
+  return new Promise((resolve, reject) => {
+    const ans = arr.reduce((acc, curr) => {
+      const num = parseFloat(curr);
+      return acc + (Number.isNaN(num) ? 0 : num);
+    }, 0);
+    resolve(ans);
+  });
+}
+
+function isEven(n) {
+  return n % 2 == 0;
+}
+
+
+module.exports = {divide, sort, sum, isEven};
